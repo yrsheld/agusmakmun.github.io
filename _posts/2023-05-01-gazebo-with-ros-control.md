@@ -4,9 +4,6 @@ title:  "Control Gazebo model with ros_control"
 date:   2023-05-01 20:41:00 +0700
 categories: [ros, gazebo]
 ---
-
-[ToC]
-
 ## Intro
 ### DataFlow
 
@@ -31,41 +28,45 @@ In launch file (or manually):
 Enable interaction between ROS & Gazebo.
 Dynamically link to the ROS library, which will tell Gazebo what to do.
 
-### Specify the plugin - gazebo_ros_control in the URDF
+### Specify the ros control plugin in URDF
 
-```xml=
+```xml
 <gazebo>
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
         <robotNamespace>/</robotNamespace>
     </plugin>
 </gazebo>
 ```
-:::info
-If you want to use robotNamespace in the next steps, then the robotNamespace need to be specified.
+
+If you want to specify the namespace, then fill in the `robotNamespace`.
+
 ex:
-```xml=
+```xml
 <robotNamespace>/mybot</robotNamespace>
 ```
-:::
 
 ## Step2: Add transmission elements to URDF
 In order to use ros_control with the robot, add transmission elements for each non-fixed joint. This links an actuator to each non-fixed joint.
 
-Important tags:
+### URDF tags:
 * **joint** - specify the "name" as the joint name predefined in URDF
 * **actuator** - specify the "name" as the name of the motor, and the "mechanicalReduction" as the reduction ratio of the motor.
 * **type** - type of transmission.
-Types: transmission_interface/SimpleTransmission
-* **hardwareInterface** - added in both the joint & actuator tags. It tells gazebo_ros_plugin which hardware interface to load (position/velocity/effort interfaces).
-Types: PositionJointInterface, VelocityJointInterface, EffortJointInterface
-:::warning
-:warning: 
-- The hardwareInterface specified here need to match the controller type we specify in Step3.
-- You may get a warning of "*Deprecated syntax, please prepend 'hardware_interface/' to 'PositionJointInterface' within the <hardwareinterface> tag in joint ...*". 
-    To avoid this warning, simply do what it says, i.e., add "hardware_interface/" at the beginning.
-:::
-For instance, to attach a position joint controller to a revolute joint, named "joint1"
-```xml=
+  - `transmission_interface/SimpleTransmission`
+* **hardwareInterface** - added in both the `joint` & `actuator` tags. It tells gazebo_ros_plugin which hardware interface to load.
+  - PositionJointInterface
+  - VelocityJointInterface
+  - EffortJointInterface
+
+### Note:
+* The `hardwareInterface` specified here need to match the controller type we specified in Step3.
+* You may get a warning of "*Deprecated syntax, please prepend 'hardware_interface/' to 'PositionJointInterface' within the <hardwareinterface> tag in joint ...*". 
+To avoid this warning, simply do what it says, i.e., add "hardware_interface/" at the beginning.
+
+### Example:
+
+Attach a position joint controller to a revolute joint, named "joint1"
+```xml
 <transmission>
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="joint1">
@@ -81,9 +82,9 @@ For instance, to attach a position joint controller to a revolute joint, named "
 ## Step 3. Configure controllers in .yaml files
 These controller configurations would be loaded into the ROS parameter space. 
 
-Later in Step 4, we would load the controllers with controller_spawner(type: controller_manager/spawner).
+Later in Step 4, we would load the controllers with controller_spawner (type: `controller_manager/spawner`).
 
-In the configuration file, things to specify include:
+### YAML keys
 * type - type of controller (refer to [ros_controllers](http://wiki.ros.org/ros_controllers))
     - [DiffDriveController](https://github.com/ros/urdf_sim_tutorial/blob/master/config/diffdrive.yaml)
     - [JointPositionController](http://wiki.ros.org/robot_mechanism_controllers/JointPositionController)
@@ -96,19 +97,15 @@ Group joints that need to move together. Note that, in the URDF, we still need t
 
 And a lot more ROS parameters that are specific for different types of controllers.
 
-
-
-
-:::warning
-:warning:  As mentioned in Step2, the controller type specified here need to match the hardwareInterface we specified in Step2.
-:::
+### Note
+As mentioned in Step2, the controller type specified here need to match the `hardwareInterface` in Step2.
 
 ### Example
 if I have two joints, joint1 & joint2, both are revolute joints with **position controllers**. We could either define each different controller in separate files, or all in one file.
 
 #### 1. In separate files (joint1.yaml, joint2.yaml, joints.yaml):
 
-```sc=
+```yml
 # joints.yaml, publish all joint states
 type: "joint_state_controller/JointStateController"
 publish_rate: 50
@@ -131,12 +128,12 @@ pid:
 ```
 
 #### 2. In a single file (mybot_control.yaml)
-:::info
-* The robot namespace could be specified at the top level. 
-    * But note that, by doing so, the "/joint_states" topic would not be "mybot/joint_states". 
-    * Thus, you need to make sure to set all the related nodes (ex: robot_state_publisher) in the same namespace.
-:::
-```sc=
+
+The robot namespace could be specified at the top level. 
+* But note that, by doing so, the `"/joint_states"` topic would now be `"mybot/joint_states"`. 
+* Thus, you need to make sure to set all the related nodes (ex: `robot_state_publisher`) in the same namespace.
+
+```yml
 mybot:
   # Publish all joint states -----------------------------------
   joint_state_controller:
@@ -155,18 +152,18 @@ mybot:
 ```
 
 ## Step 4. Load controller configurations & Call service - ros_control
-As mentioned in previous step, now we would load the control configs from step3. Usually in a launch file.
+As mentioned in previous step, now we would load the control configs from Step3. This is usually done via a launch file.
 
 Simply by running the node - [controller_manager/spawner](http://wiki.ros.org/controller_manager), and gives the name of the controllers as arguments, which would make a service call to the ros_control controller manager, and automatically start all controllers.
 
 After launching this launch file, we could then control the position of joints by publishing to the controller's command topic. As for the type of topic, refer to each controller. 
-(ex: [JointPositionController](http://wiki.ros.org/robot_mechanism_controllers/JointPositionController)/command - type: std_msgs/Float64)
+(ex: [JointPositionController](http://wiki.ros.org/robot_mechanism_controllers/JointPositionController)/command - type: `std_msgs/Float64`)
 
-Ex: Publish to the mybot/joint1_position_controller
+Ex: Publish to the `mybot/joint1_position_controller`
 ```python
 rostopic pub /mybot/joint1_position_controller/command std_msgs/Float64 "data: -0.707"
 ```
-Ex: Publish to a joint group position controller, named mybot/gripper_controller, with three joints within.
+Ex: Publish to a joint group position controller, named `mybot/gripper_controller`, with three joints within.
 ```python
 rostopic pub /mybot/gripper_controller/command std_msgs/Float64MultiArray "layout:
   dim:
@@ -180,7 +177,7 @@ data: [0, 0.5, 0.5]"
 ### Example
 
 #### 1. In separate files (joint1.yaml, joint2.yaml, joints.yaml):
-```xml=
+```xml
 <!-- load joint1 yaml -->
 <rosparam file="$(find mybot)/config/joint1.yaml" 
         command="load" 
@@ -204,8 +201,9 @@ data: [0, 0.5, 0.5]"
         mybot_joint2_position_controller
         mybot_joint_state_controller"/>
 ```
+
 #### 2. In a single file (mybot_control.yaml)
-```xml=
+```xml
 <!-- load mybot_control yaml -->
 <rosparam file="$(find mybot)/config/mybot_control.yaml" 
          command="load"/>
@@ -225,18 +223,18 @@ After starting the controllers, we could then control the position of joints by 
 
 ### Controller subscribed topics
 To name a few:
-- [JointPositionController/command](http://wiki.ros.org/robot_mechanism_controllers/JointPositionController) - position command (std_msgs/Float64)
-- [JointVelocityController/command](http://wiki.ros.org/robot_mechanism_controllers/JointVelocityController) - velocity command (std_msgs/Float64)
-- JointGroupPositionController/command - position commands (std_msgs/Float64MultiArray)
-- [DiffDriveController/command](http://wiki.ros.org/diff_drive_controller?distro=noetic) - velocity command (geometry_msgs/Twist)
+- [JointPositionController/command](http://wiki.ros.org/robot_mechanism_controllers/JointPositionController) - position command (`std_msgs/Float64`)
+- [JointVelocityController/command](http://wiki.ros.org/robot_mechanism_controllers/JointVelocityController) - velocity command (`std_msgs/Float64`)
+- JointGroupPositionController/command - position commands (`std_msgs/Float64MultiArray`)
+- [DiffDriveController/command](http://wiki.ros.org/diff_drive_controller?distro=noetic) - velocity command (`geometry_msgs/Twist`)
 
 ### Publish commands to topics
 #### 1. Publish to topic via command
-Ex: Publish to the mybot/joint1_position_controller
+Ex: Publish to the `mybot/joint1_position_controller`
 ```python
 rostopic pub /mybot/joint1_position_controller/command std_msgs/Float64 "data: -0.707"
 ```
-Ex: Publish to a joint group position controller, named mybot/gripper_controller, with three joints within.
+Ex: Publish to a joint group position controller, named `mybot/gripper_controller`, with three joints within.
 ```python
 rostopic pub /mybot/gripper_controller/command std_msgs/Float64MultiArray "layout:
   dim:
@@ -248,11 +246,11 @@ data: [0, 0.5, 0.5]"
 ```
 
 #### 2. Publish to topic via rqt_robot_steering
-Make use of rqt_robot_steering/rqt_robot_steering, which would generate a GUI for you to adjust the command values dynamically.
-Specify the topic name as the param - "default_topic"
+Make use of `rqt_robot_steering/rqt_robot_steering`, which would generate a GUI for you to adjust the command values dynamically.
+Specify the topic name as the param - `"default_topic"`
 
 Ex:
-```xml=
+```xml
 <!--rqt robot steering-->
 <node name="rqt_robot_steering" pkg="rqt_robot_steering" type="rqt_robot_steering">
     <param name="default_topic" value="/mybot_diff_drive_controller/cmd_vel"/>
@@ -261,14 +259,8 @@ Ex:
     
 #### 3. rqt_gui
 Use rqt_gui to publish to target topics. And we could even visualize the command value & joint states and perform controller tuning with it.
-Refer to the [gazebo_tutorial](https://classic.gazebosim.org/tutorials?tut=ros_control#Visualizethecontroller'sperformance)
+Refer to the [gazebo_tutorial](https://classic.gazebosim.org/tutorials?tut=ros_control#Visualizethecontroller'sperformance).
 
-## Final result
-<!-- blank line -->
-<figure class="video_container">
-  <iframe src="https://drive.google.com/file/d/1S0n3_ZUSuDgTRkklTQk3WwQ7eCfQR8nv/preview" frameborder="0" allowfullscreen="true" width="400" height="200"> </iframe>
-</figure>
-<!-- blank line -->
 
 ## Summary
 * To enable interaction between gazebo & ros, we add the gazebo_ros_control plugin in the URDF.
@@ -282,3 +274,4 @@ Refer to the [gazebo_tutorial](https://classic.gazebosim.org/tutorials?tut=ros_c
 * official gazebo tutorial - [ROS Control](https://classic.gazebosim.org/tutorials?tut=ros_control)
 * ros wiki - [ros_control](http://wiki.ros.org/ros_control)
 * ros wiki - [ros_controllers](http://wiki.ros.org/ros_controllers)
+* demo of using rqt-robot-steering to control gazebo model - [project - Driving with ros control](https://yrsheld.github.io/project/driving-with-ros-control/)

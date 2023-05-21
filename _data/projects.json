@@ -8,7 +8,7 @@
 		"tags": ["Angular JS", "API", "ROS"]
 	},
 	{
-		"slug": "ros-control",
+		"slug": "driving-with-ros-control",
 		"name": "Driving with ros control",
 		"image": "ros-control-demo.jpg",
 		"date": "May 2023",
