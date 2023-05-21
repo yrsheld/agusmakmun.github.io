@@ -29,7 +29,7 @@ Here the target object and the gazebo scene is rather simple, hence an uncomplic
 Handled by cv_bridge
 * Convert image format from BGR to HSV
 Reason: HSV works better for thresholding
-You may need to try out threshold values. Refer to [color_finder.py](https://github.com/yrsheld/ros_projects/blob/main/ball_track/scripts/color_finder.py) for generating a GUI for value tuning.
+You may need to try out threshold values. Refer to [color_finder.py](https://github.com/yrsheld/Ball_tracking/blob/main/scripts/color_finder.py) for generating a GUI for value tuning.
 * Find circle
 For general geometry search, the `cv2.findContours` & `cv2.approxPolyDP` may come in handy. You may able to differentiate different shapes by the number of edges.
 
