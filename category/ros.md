@@ -1,6 +1,6 @@
 ---
 layout: posts_by_category
 categories: ros
-title: Ros
+title: ROS
 permalink: /category/ros
 ---
