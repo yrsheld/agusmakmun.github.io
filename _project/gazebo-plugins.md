@@ -8,4 +8,7 @@ Demo of using gazebo sensor & projector plugins. Attach a lidar sensor at the to
 
 ![](https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/projects/gazebo-plugins2.png)
 
-For general procedure to work with ros_control see [Post: gazebo-with-ros-control]()
+
+![](https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/projects/gazebo-plugins.png)
+
+For general procedure to add gazebo plugins, see [Post: Using gazebo plugins](https://yrsheld.github.io/ros/gazebo/2023/05/02/gazebo-plugin.html).
