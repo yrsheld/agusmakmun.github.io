@@ -4,4 +4,8 @@ title:  "Driving with ros control"
 slug: "driving-with-ros-control"
 ---
 
-Hello.
+Driving a simple mobile robot in gazebo with ros_control.
+
+[![Watch the video](https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/projects/ros-control-demo.jpg)](https://drive.google.com/file/d/1S0n3_ZUSuDgTRkklTQk3WwQ7eCfQR8nv/preview)
+
+For general procedure to work with ros_control see [Post: gazebo-with-ros-control]()

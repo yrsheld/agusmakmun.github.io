@@ -10,7 +10,7 @@
 	{
 		"slug": "gazebo-plugins",
 		"name": "Extend model with Gazebo plugins",
-		"image": "gazebo-plugins.jpg",
+		"image": "gazebo-plugins.png",
 		"date": "May 2023",
 		"tags": ["ROS", "Gazebo"],
 		"url": "https://github.com/yrsheld/mybot/tree/gazebo_sensors"
