@@ -100,6 +100,8 @@ def pos_cb(self, pos):
 
     self.lastTime = time.time()
 ```
+
+
 #### Publish velocity command
 Publish to the `/cmd_vel` topic every 0.1 second. Since the robot only performs planar motion, the velocity command only need to have 2 nonzero entries (linear x for moving forward, angular z for rotation)
 
