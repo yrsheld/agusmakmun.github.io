@@ -4,8 +4,15 @@
 		"name": "Cool project 1",
 		"image": "placeholder.jpg",
 		"url": "https://www.google.com",
-		"date": "Jan 2014",
-		"tags": ["Angular JS","API"]
+		"date": "May 2023",
+		"tags": ["Angular JS", "API", "ROS"]
+	},
+	{
+		"slug": "ros-control",
+		"name": "Driving with ros control",
+		"image": "ros-control-demo.jpg",
+		"date": "May 2023",
+		"tags": ["ROS"]
 	},
 	{
 		"name": "Cool project 2",
