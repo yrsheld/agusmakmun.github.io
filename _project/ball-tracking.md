@@ -37,7 +37,7 @@ Here, since we are searching for a red ball, we only target at searching for cir
 
 The center position of the circle would now be rendered as the 2D position of the red ball.
 
-## Coordinate transformation
+## 2.   Coordinate transformation
 ### Goal
 Convert 2D position (pixels) to 3D position (meters) w.r.t the camera frame.
 For verifying the result, a Marker would be published to the rendered 3D position.
@@ -81,7 +81,7 @@ def convert3D(self, x_2d, y_2d, r_2d):
     return p       
 ```
 
-## Motion control
+## 3.   Motion control
 ### Goal
 Keep a fixed distance to the target object. Move along with the target and try to keep it at the center of view. If out of sight, rotate and search for it.
 
@@ -107,7 +107,7 @@ There are basically two modes:
 * **Target in sight**: Linear acceleration in case of being too far away from the target object. Rotate to keep the object at the center of view.
 * **Target out of sight (Timeout)**: If the last message receiving time is too long ago (i.e., exceeding the defined timeout), then rotate to search for its appearance.
 
-## Result
+## Video demos
 ### Track orbiting ball
 [![Watch the video](https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/img/_posts/ball-tracking/demo1.png)](https://drive.google.com/file/d/1bk_2yLANjX-Kp12dok39rbulLUgWbe0a/preview)
 
