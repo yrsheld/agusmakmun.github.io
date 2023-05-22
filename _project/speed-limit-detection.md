@@ -69,7 +69,8 @@ For each camera image input, compute its SIFT features, then brute-force matchin
 SIFT (Scale Invariant Feature Transform) identify `local keypoints` and `descriptor`, describing the keypoint in a higher-dimensional feature space.
 
 To compute SIFT feature of the camera BGR image
-```Python
+
+``` python
 # Create instance of SIFT detector
 sift = cv2.xfeatures2d.SIFT_create()
 # Convert to grayscale image
@@ -81,7 +82,7 @@ keypoints, descriptors = sift.detectAndCompute(img_gray, None)
 #### Flann-based matching
 FLANN (Fast Library for Approximate Nearest Neighbors) performs efficient feature matching (i.e., matching the keypoint descriptors) between images.
 
-```Python
+``` python
 # Instantiate FlannBasedMatcher
 index_params = dict(algorithm=0, trees=5)
 search_params = dict(checks=100)
