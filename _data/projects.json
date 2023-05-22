@@ -24,8 +24,9 @@
 		"url": "https://github.com/yrsheld/Ball_tracking"
 	},
 	{
-		"name": "speed-limit-detect",
-		"image": "placeholder.jpg",
+		"slug": "speed-limit-detection",
+		"name": "Line following with speed limit sign detection",
+		"image": "speed_limit_detection.png",
 		"date": "May 2023",
 		"tags": ["ROS","Gazebo","Computer Vision"],
 		"url": "https://github.com/yrsheld/Speed_limit_detect"

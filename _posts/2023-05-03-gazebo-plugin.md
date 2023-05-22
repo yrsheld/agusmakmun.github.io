@@ -128,4 +128,4 @@ In robot URDF, insert `plugin` inside the `gazebo` tag.
 * ros wiki - [gazebo_plugins](http://wiki.ros.org/gazebo_plugins)
 * official Gazebo Tutorial - [Gazebo plugins in ROS](https://classic.gazebosim.org/tutorials?tut=ros_gzplugins)
 * gazebo plugin source code - [Github repo](https://github.com/ros-simulation/gazebo_ros_pkgs/tree/noetic-devel/gazebo_plugins)
-* example of xacro files with lidar, (depth) camera, projector plugin - [my Github repo (branch "gazebo-sensors")](https://github.com/yrsheld/ros_projects/tree/gazebo_sensors/mybot/urdf)
+* example of xacro files with lidar, (depth) camera, projector plugin - [My project - mybot (branch "gazebo-sensors")](https://github.com/yrsheld/mybot/tree/gazebo_sensors/urdf)
