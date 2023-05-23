@@ -71,7 +71,7 @@ sudo aa-status                                  # check status again
 
 #### Step 5. Reenable AppArmor
 ```
-sudo systemctl enabled apparmor                 # enable AppArmor
+sudo systemctl enable apparmor                 # enable AppArmor
 sudo systemctl start apparmor                   # restart AppArmor
 ```
 
@@ -86,3 +86,4 @@ sudo systemctl start apparmor                   # restart AppArmor
   -  [thread2](https://stackoverflow.com/questions/47223280/docker-containers-can-not-be-stopped-or-removed-permission-denied-error)
 * Others
   - [docker system prune](https://docs.docker.com/engine/reference/commandline/system_prune/)
+  - [AppArmor](https://help.ubuntu.com/community/AppArmor)
