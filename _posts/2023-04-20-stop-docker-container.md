@@ -77,11 +77,12 @@ sudo systemctl start apparmor                   # restart AppArmor
 
 ## Reference
 * Stop containers
-  - docker compose down - https://docs.docker.com/engine/reference/commandline/compose_down/
-  - docker compose stop - https://docs.docker.com/engine/reference/commandline/compose_stop/
-  - compare - https://stackoverflow.com/questions/46428420/docker-compose-up-down-stop-start-difference
-  - compare - https://eldermoraes.com/docker-basics-how-to-start-and-stop-containers/
+  - [docker compose down](https://docs.docker.com/engine/reference/commandline/compose_down/)
+  - [docker compose stop](https://docs.docker.com/engine/reference/commandline/compose_stop/)
+  - [compare](https://stackoverflow.com/questions/46428420/docker-compose-up-down-stop-start-difference)
+  - [compare](https://eldermoraes.com/docker-basics-how-to-start-and-stop-containers/)
 * Issue threads
-  -  https://forums.docker.com/t/can-not-stop-docker-container-permission-denied-error/41142
-  -  https://stackoverflow.com/questions/47223280/docker-containers-can-not-be-stopped-or-removed-permission-denied-error
-* docker system prune - https://docs.docker.com/engine/reference/commandline/system_prune/
+  -  [thread1](https://forums.docker.com/t/can-not-stop-docker-container-permission-denied-error/41142)
+  -  [thread2](https://stackoverflow.com/questions/47223280/docker-containers-can-not-be-stopped-or-removed-permission-denied-error)
+* Others
+  - [docker system prune](https://docs.docker.com/engine/reference/commandline/system_prune/)
