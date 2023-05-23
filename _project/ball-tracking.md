@@ -9,6 +9,7 @@ slug: "ball-tracking"
 * Track a red ball with RGB camera.
 * Move along to keep the ball in sight.
 * If ball out of sight, rotate and search for it.
+
 ### Structure Overview
 Main nodes:
 - ball_detector_3d: object detection & obtain its 3D position.
