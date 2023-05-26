@@ -24,7 +24,7 @@ urls:
       url: /projects/
 
 url: "hsuan.tseng13@gmail.com"
-baseurl: ""
+baseurl: "hsuan.tseng13@gmail.com"
 paginate: 20
 per_page: 20
 paginate_path: "/page/:num/"
