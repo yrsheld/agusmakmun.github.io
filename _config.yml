@@ -2,7 +2,7 @@ title: Blog posts
 description: 
 author: Yi-Hsuan Tseng
 github: https://github.com/yrsheld
-about: ROBOT
+about: Thoughts in Progress
 google_analytics: UA-XXXXXXXX-Y
 
 enableTags: true
@@ -14,26 +14,16 @@ collections:
     permalink: /project/:path/
 
 social:
-    - icon: fa-facebook
-      link: "#"
-    - icon: fa-twitter
-      link: "#"
     - icon: fa-linkedin
-      link: "#"
-    - icon: fa-stack-exchange
-      link: "#"
+      link: "https://www.linkedin.com/in/yi-hsuan-tseng-463656273/"
     - icon: fa-github
       link: "https://github.com/yrsheld"
 
 urls:
-    - text: About Me
-      url: /about/
     - text: My Projects
       url: /projects/
-    - text: XML Feed
-      url: /feed.xml
 
-url: "https://yrsheld.github.io"
+url: "hsuan.tseng13@gmail.com"
 baseurl: ""
 paginate: 20
 per_page: 20

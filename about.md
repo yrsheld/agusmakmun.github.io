@@ -4,6 +4,4 @@ title: About
 permalink: /about/
 ---
 
-Happy!
-
-email: hsuan.tseng13[at]gmail.com
+email: hsuan.tseng13@gmail.com
