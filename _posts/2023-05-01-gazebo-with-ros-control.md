@@ -52,7 +52,7 @@ In order to use ros_control with the robot, add transmission elements for each n
 * **joint** - specify the "name" as the joint name predefined in URDF
 * **actuator** - specify the "name" as the name of the motor, and the "mechanicalReduction" as the reduction ratio of the motor.
 * **type** - type of transmission.
-  - `transmission_interface/SimpleTransmission`
+  - `transmission_interface/SimpleTransmission`: A simple reducer transmission, between actuator (motor) and joint, where the reduction is defined by the gearbox.
 * **hardwareInterface** - added in both the `joint` & `actuator` tags. It tells gazebo_ros_plugin which hardware interface to load.
   - PositionJointInterface
   - VelocityJointInterface
