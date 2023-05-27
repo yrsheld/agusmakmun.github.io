@@ -1,6 +1,6 @@
 ---
 layout: posts_by_category
-categories: pytorch
+categories: Pytorch
 title: Pytorch
-permalink: /category/pytorch
+permalink: /category/Pytorch
 ---

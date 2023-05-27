@@ -20,7 +20,7 @@ social:
       link: "https://github.com/yrsheld"
 
 urls:
-    - text: My Projects
+    - text: Projects
       url: /projects/
 
 url: "https://github.com/yrsheld"

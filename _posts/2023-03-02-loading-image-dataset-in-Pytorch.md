@@ -2,7 +2,7 @@
 layout: post
 title:  "Loading image dataset in Pytorch"
 date:   2023-03-02 14:30:00 +0700
-categories: [pytorch, ML]
+categories: [Pytorch, ML]
 ---
 ## Imports
 ``` python
