@@ -23,8 +23,8 @@ urls:
     - text: My Projects
       url: /projects/
 
-url: "hsuan.tseng13@gmail.com"
-baseurl: "hsuan.tseng13@gmail.com"
+url: "https://github.com/yrsheld"
+baseurl: ""
 paginate: 20
 per_page: 20
 paginate_path: "/page/:num/"
