@@ -23,7 +23,7 @@ urls:
     - text: Projects
       url: /projects/
 
-url: "https://github.com/yrsheld"
+url: "https://yrsheld.github.io"
 baseurl: ""
 paginate: 20
 per_page: 20
