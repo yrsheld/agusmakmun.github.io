@@ -35,6 +35,7 @@ Frame f5(f6); //the copy constructor
 ```
 
 * Access frame values
+
 ``` cpp
 KDL::Vector v = f.p      //3-dim vector
 KDL::Rotation R = f.M    //3x3 matrix
@@ -63,6 +64,8 @@ f.M.GetQuaternion(pose.orientation.x, pose.orientation.y, pose.orientation.z, po
 double r, p, y;
 f.M.GetRPY(r, p, y);
 ```
+
+
 
 Further details, refer to [orocos wiki - geometric primitives](https://www.orocos.org/wiki/Geometric_primitives.html)
 
