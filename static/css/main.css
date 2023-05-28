@@ -32,10 +32,10 @@ h2, h3 {
 }
 a, a:link, a:active {
   text-decoration: none;
-  color: #18da42;
+  color: #2610ec;
 }
 a:hover {
-  color: #be8e8ee7;
+  color: #6e68bde7;
   text-decoration: underline;
 }
 
@@ -96,7 +96,7 @@ div.col-sm-3 strong {
 }
 div.col-sm-3 div.profile-about {
   margin-top: 10px;
-  color: #2383bb;
+  color: #7f7dcc;
 }
 
 /* Pagination */
