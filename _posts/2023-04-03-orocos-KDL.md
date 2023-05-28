@@ -89,7 +89,7 @@ Below are common headers.
 `kdl_parser` parses the urdf file and generate KDL tree (`KDL::Tree`).
 ``` cpp
 KDL::Tree tree;
-kdl_parser::treeFromFile('/path/to/urdf', tree);
+kdl_parser::treeFromFile("/path/to/urdf", tree);
 ```
 
 ### 2. Generate kinematic chain `KDL::Chain`
