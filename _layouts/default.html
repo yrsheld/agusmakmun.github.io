@@ -15,8 +15,25 @@ layout: compress
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
     <meta content="{{ site.share.fb_appid }}" property="fb:app_id">
     <meta content="{{ site.title }}" property="og:site_name">
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+    </script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [['$','$'], ['\\(','\\)']],
+          processEscapes: true},
+          jax: ["input/TeX","input/MathML","input/AsciiMath","output/CommonHTML"],
+          extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js","AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"],
+          TeX: {
+          extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"],
+          equationNumbers: {
+          autoNumber: "AMS"
+          }
+        }
+      });
+    </script>
 
     {% if page.noindex %}
       <meta name="robots" content="noindex">
