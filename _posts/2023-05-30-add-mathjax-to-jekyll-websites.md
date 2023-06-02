@@ -10,14 +10,15 @@ categories: [others]
 * However, some Mardown processors or web browsers (ex: Jekyll websites) don't support MathJax. 
 * Luckily, this problem could be solved easily with the following 2 steps.
 
-## 1. Add in `_config.yml`
+## Solution
+### 1. Add in `_config.yml`
 
 ``` yml
 kramdown:
   math_engine: mathjax
 ```
 
-## 2. Add to layout html
+### 2. Add to layout html
 
 Add below in the `<head>` section of html.
 This includes specifying the MathJax configuration, telling MathJax how you plan to indicate the mathematics and notions. By defining it based on LaTex syntax (ex: `$...$` as default in-line delimiters), MathJax is enabled to intepret original LaTeX in Markdown.
@@ -52,11 +53,10 @@ This includes specifying the MathJax configuration, telling MathJax how you plan
 ```
 
 ### Display in web browser
-
-![latex](https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/img/_posts/latex.png)
+<img src="https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/img/_posts/latex.png" alt= “” width="500" height="">
 
 ## Reference
-1. https://www.fabriziomusacchio.com/blog/2021-08-10-How_to_use_LaTeX_in_Markdown/
-2. https://docs.mathjax.org/en/v2.7-latest/start.html
+1. [https://www.fabriziomusacchio.com/blog/2021-08-10-How_to_use_LaTeX_in_Markdown/](https://www.fabriziomusacchio.com/blog/2021-08-10-How_to_use_LaTeX_in_Markdown/)
+2. [https://docs.mathjax.org/en/v2.7-latest/start.html](https://docs.mathjax.org/en/v2.7-latest/start.html)
 
     
