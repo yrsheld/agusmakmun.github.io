@@ -53,7 +53,8 @@ This includes specifying the MathJax configuration, telling MathJax how you plan
 ```
 
 ### Display in web browser
-<img src="https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/img/_posts/latex.png" alt= “” width="500" height="">
+
+<img src="https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/img/_posts/latex.png" alt= "latex" width="500">
 
 ## Reference
 1. [https://www.fabriziomusacchio.com/blog/2021-08-10-How_to_use_LaTeX_in_Markdown/](https://www.fabriziomusacchio.com/blog/2021-08-10-How_to_use_LaTeX_in_Markdown/)
