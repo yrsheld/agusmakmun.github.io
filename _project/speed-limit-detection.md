@@ -107,7 +107,7 @@ if len(good_match) > min_match_threshold:
 ![](https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/img/_posts/flann_based_matching.png)
 
 
-## Line following
+## 3. Line following
 ### Implementation
 Implemented in [line_follower.py](https://github.com/yrsheld/Speed_limit_detect/blob/main/scripts/line_follower.py)
 
