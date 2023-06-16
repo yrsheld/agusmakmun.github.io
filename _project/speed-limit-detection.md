@@ -119,6 +119,7 @@ Input: BGR image
 3. HSV thresholding, capturing only the yellow region
 4. Find contours in masked image. The largest contour would be treated as the yellow path.
 5. Compute the mass center of the line.
+
 #### Generate velocity command
 Adjust angular velocity based on line centroid. Try to tilt its orientation to keep the centroid at the center of camera view.
 
