@@ -121,5 +121,5 @@ int main(){
 
 ## Summary
 
-To generate (pseudo) random integers, one can make use of the exsiting function in <stdlib.h> `rand`, `srand`, or we could define our own versions of these functions, following the concept of linear congruential generator.
+To generate (pseudo) random integers, one can make use of the exsiting function in <stdlib.h> `srand()` & `rand()` , or we could define our own versions of these functions, following the concept of linear congruential generator.
 
