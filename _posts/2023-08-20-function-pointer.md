@@ -56,7 +56,7 @@ func();  //call function via pointer
 Some points worth notice: 
 
 * when a function pointer is declared, it needs to be specified as a pointer. (i.e., need to add * before it)
-* When calling a function via pointer, func() = (*func)() = (**func)() = (********func)(). The reason is that func would always be converted to &func implicitly.
+* When calling a function via pointer, `func()` = `(*func)()` = `(**func)()` = `(********func)()`. The reason is that func would always be converted to &func implicitly.
 
 
 ### Pass function pointers as arguments
