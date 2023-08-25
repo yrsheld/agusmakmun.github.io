@@ -13,7 +13,7 @@ i.e., keyboard -> Buffer -> getc, getchar, scanf
 So we are actually reading from the buffer
 
 
-## getchar (from <stdio.h>)
+## getchar (stdio.h)
 
 `int getchar(void)`: get character from stdin
 
@@ -30,7 +30,7 @@ int main(){
 }
 ```
 
-## getc (from <stdio.h>)
+## getc (stdio.h)
 
 `int getc(FILE * stream)`: get character from stream
 
@@ -92,7 +92,7 @@ printf("%d\n", grade); //68192
 The number of pointers is indefinite. To deal with this:
 
 1. `void myscanf(const char * format, ...)` : ... denotes infinite number of arguments
-2. use `va_list` (from <stdargs.h>) to handle the arguments
+2. use `va_list` (stdargs.h) to handle the arguments
 
 Now we could implement the simplified version of scanf, that only handles format: int & float. 
 
