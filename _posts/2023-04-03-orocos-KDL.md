@@ -35,7 +35,6 @@ Frame f5(f6); //the copy constructor
 ```
 
 * Access frame values
-
 ``` cpp
 KDL::Vector v = f.p      //3-dim vector
 KDL::Rotation R = f.M    //3x3 matrix
@@ -99,12 +98,16 @@ tree.getChain("base_link", "wrist_3_link", chain);
 ```
 
 ### 3. Create forward/inverse kinematics solver, based on kinematic chain.
+
 > List of solvers at [https://www.orocos.org/wiki/Kinematic_and_Dynamic_Solvers.html](https://www.orocos.org/wiki/Kinematic_and_Dynamic_Solvers.html)
+
+
 #### Fk solver
 * `KDL::ChainFkSolverPos_recursive`
 ``` cpp
 KDL::ChainFkSolverPos_recursive fk_solver(chain);
 ```
+
 #### Ik solver
 Need another velocity solver
 * `KDL::ChainIkSolverVel_pinv`   - velocity solver
