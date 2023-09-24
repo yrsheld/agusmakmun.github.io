@@ -27,6 +27,7 @@ The target_link_libraries would link the executable - talker, to all the predefi
 The executable depends on libraries - roscpp, rospy, std_msgs. So we need to define in the `find_package()`, and then link the executable to the libraries via `target_link_libraries()`. 
 
 > This linking is necessary, or else, there would be error - "undefined reference" to all the library functions during compiling.
+
 ```cmake
 find_package(catkin REQUIRED COMPONENTS
   roscpp
