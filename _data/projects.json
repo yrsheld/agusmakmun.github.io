@@ -32,10 +32,12 @@
 		"url": "https://github.com/yrsheld/Speed_limit_detect"
 	},
 	{
-		"name": "Cool project 5",
-		"image": "placeholder.jpg",
-		"date": "Oct 2016",
-		"tags": ["Python","nodejs"]
+		"slug": "global-path-planner-plugin",
+		"name": "Global Path planner plugin",
+		"image": "speed_limit_detection.png",
+		"date": "Sep 2023",
+		"tags": ["ROS"],
+		"url": "https://github.com/yrsheld/my_global_planner"
 	},
 	{
 		"name": "Cool project 6",
