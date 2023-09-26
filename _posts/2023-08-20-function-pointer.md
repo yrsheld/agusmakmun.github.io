@@ -30,10 +30,9 @@ printf("Hello");
 So `printf`, `&printf`, and `*printf` all work, and they are essentially doing the same thing, that is `&printf`.
 
 
-## Usage: for copying functions, and function pointers can be passed as function argument.
+## Usage
 
-
-### Copy function
+### 1. Copy function
 Functions cannot be directly copied. For instance,
 
 
@@ -59,14 +58,14 @@ Some points worth notice:
 * When calling a function via pointer, `func()` = `(*func)()` = `(**func)()` = `(********func)()`. The reason is that func would always be converted to &func implicitly.
 
 
-### Pass function pointers as arguments
+### 2. Pass function pointers as arguments
 
 
 ```c
 void A(int (*B)(int))
 ```
 
-As pointer B refer to different functions, the function A becomes general and could perform different tasks.
+As pointer B refers to different functions, the function A becomes general and could perform different tasks.
 
 Example:
 
