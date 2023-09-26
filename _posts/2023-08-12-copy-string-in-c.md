@@ -59,14 +59,18 @@ char * strcpy (char * destination, const char * source);
 
 Note that, although the function specifies that destination of type `char*`, directly declare it as this type is invalid. (Reason: destination is going to be modified.)
 
-Hence, destination should be of type: `char []`, so that actual memory space is allocated to it, and thus able to be modified.
+Hence, destination should be of type `char []` or `char * s = malloc(...)`, so that actual memory space is allocated to it, and thus able to be modified.
 
-```c
-const char* source = "test"; 
-char destination[5]; //char * destination: invalid
+```cpp
+const char* source = "test";
 
-strcpy(destination, source);
+char * destination1 = NULL; 
+char destination2[5];
+char * destination3 = malloc(sizeof(char)*(strlen(source)+1));
 
-printf("%s\n", destination);
+strcpy(destination1, source);  //(x) compile error
+strcpy(destination2, source);  //(o)
+strcpy(destination3, source);  //(o)
+
 return 0;
 ```
