@@ -148,7 +148,7 @@ The plugin would generate the global plan, and we can specifying which algorithm
 Currently A* and Dijkstra algorithms are avaialble.
 A sample running of Dijkstra planner:
 
-
+[![Watch the video](https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/projects/dijkstra_demo.png)](https://drive.google.com/file/d/1plcW52jBbf_acsAuNExRNxo5p1KRkh4a/preview)
 
 
 ## Side note

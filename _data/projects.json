@@ -34,7 +34,7 @@
 	{
 		"slug": "global-path-planner-plugin",
 		"name": "Global Path planner plugin",
-		"image": "speed_limit_detection.png",
+		"image": "global-path-planner-dijkstra.png",
 		"date": "Sep 2023",
 		"tags": ["ROS"],
 		"url": "https://github.com/yrsheld/my_global_planner"
