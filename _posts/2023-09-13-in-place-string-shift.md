@@ -43,6 +43,6 @@ void shiftString(char* s, int leftShift){
     reverse(s, leftShift, length);  //[leftShift, length)
 }
 ```
-
+Note: right shift x characters == left shift (length-x) characters.
 ## Reference
 * Leetcode 1427. Perform String Shift
