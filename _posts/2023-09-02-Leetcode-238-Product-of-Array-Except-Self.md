@@ -7,10 +7,12 @@ categories: [C, Leetcode]
 
 [Link to problem](https://leetcode.com/problems/product-of-array-except-self/)
 Here discuss a solution, written in C, to this problem.
+
 ## Challenge
 * No division
 * O(n) time
 * O(1) extract space, aside from the returned array
+
 ## Idea
 For the i-th element, the result 
 = (the product from 0~(i-1)-th) $\times$ (the product from (i+1)~(n-1)th)
