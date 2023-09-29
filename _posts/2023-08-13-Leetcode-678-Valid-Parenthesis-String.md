@@ -202,3 +202,7 @@ bool checkValidString(char * s){
     return lower == 0;
 }
 ```
+
+## Reference
+* [https://www.youtube.com/live/_W__TwkbsMs?si=kqFXxOPnKnK3VCqu](https://www.youtube.com/live/_W__TwkbsMs?si=kqFXxOPnKnK3VCqu)
+* [https://github.com/wisdompeak/LeetCode/tree/master/Greedy/678.Valid-Parenthesis-String](https://github.com/wisdompeak/LeetCode/tree/master/Greedy/678.Valid-Parenthesis-String)
