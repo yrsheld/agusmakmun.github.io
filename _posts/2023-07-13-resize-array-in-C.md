@@ -121,6 +121,22 @@ int main(){
 }
 ```
 
+### calloc
+```cpp
+void* calloc(size_t size, size_t size);
+```
+The only difference is that, calloc would **initialize all bytes as zero**.
+For instance:
+```cpp
+//1D array (100)
+int* arr = calloc(100, sizeof(int));
+
+//2D array (100x100)
+int** mat = malloc(sizeof(int*)*100);
+for(int i=0;i<100;i++){
+    mat[i] = calloc(100, sizeof(int));
+}
+```
 ### free
 
 While malloc allocates memory space that would not automatically released, it could cause memory leak if not released properly.
