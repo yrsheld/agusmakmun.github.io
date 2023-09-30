@@ -2,14 +2,15 @@
 layout: post
 title:  "Orientation estimation with accelerometer"
 date:   2023-08-20 17:57:00 +0700
-categories: [C]
+categories: [sensor]
 ---
 
 
 ## Overview
 
 A common coordinate system is as follows:
-<img src="https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/img/_posts/ori_1.png" alt= "latex" width="200">
+
+<img src="https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/img/_posts/ori_1.png" alt= "latex">
 
 Accelerometer sensors measure the difference between any linear acceleration in the accelerometer’s reference frame and the earth's gravitational field vector.
 
@@ -21,13 +22,13 @@ Accelerometer sensors measure the difference between any linear acceleration in 
 
 
 ## Formulation
-<img src="https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/img/_posts/ori_2.png" alt= "latex" width="200">
+<img src="https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/img/_posts/ori_2.png" alt= "latex" >
 
 Assumptions:
 1. No linear acceleration ($a_r = 0$)
 2. In the intial setup, the z axis aligns with the earth's gravitational field vector.
 
-<img src="https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/img/_posts/ori_3.png" alt= "latex" width="200">
+<img src="https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/img/_posts/ori_3.png" alt= "latex">
 
 Now, the goal is to **estimate the angles roll($\phi$), pitch($\theta$), yaw($\psi$)** in rotation matrix R, given measurements: $a_x, a_y, a_z$
 
@@ -43,7 +44,7 @@ For a 3 step sequence, there are 6 possible orderings.
 But 4 of them can be ruled out, since the result are functions of $\phi, \theta, \psi$. But for a normalized accelerometer measurements, there are actually only 2 independent equations. It's impossible to solve the 3 unknown angles, given only 2 linearly independent equations.
 
 The only 2 valid rotation sequences:
-<img src="https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/img/_posts/ori_4.png" alt= "latex" width="200">
+<img src="https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/img/_posts/ori_4.png" alt= "latex" >
 
 
 > Note: the rotation are fixed-axis. So Rxyz = RxRyRz is to first rotate around z, then y, then x.
@@ -55,11 +56,11 @@ As mentioned, there are 2 possible rotation sequences that can be used. And they
 
 ### Rxyz
 
-<img src="https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/img/_posts/ori_5.png" alt= "latex" width="200">
+<img src="https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/img/_posts/ori_5.png" alt= "latex" >
 
 ### Ryxz
 
-<img src="https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/img/_posts/ori_6.png" alt= "latex" width="200">
+<img src="https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/img/_posts/ori_6.png" alt= "latex" >
 
 ### Python implementation
 Based on this relation, we can easily convert the static accelerometer measurement results ($a_x$, $a_y$, $a_z$) to the titl angles (roll & pitch)
