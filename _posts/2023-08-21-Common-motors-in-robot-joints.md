@@ -13,12 +13,12 @@ Multiple components within the joint:
 * Gearbox (e.g. harmonic drive, i.e., strain wave gear)
 * Encoder to measure joint position
 
-<img src="https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/img/_posts/joints.png" alt= "latex">
+<img src="https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/img/_posts/joints.png" alt= "latex" width="200">
 
 
 ## 1. AC Motor
 
-<img src="https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/img/_posts/ac.png" alt= "latex">
+<img src="https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/img/_posts/ac.png" alt= "latex" width="300">
 
 
 An electric motor is a coil that is mounted between two permanent magnets. When you run current through a coil, you will get a magnetic field. In this case, the magnetic field will be repelled from the permanent magnet to the left, and on the other hand, will it be attracted from the permanent magnet to the right. 
@@ -30,9 +30,9 @@ An electric motor is a coil that is mounted between two permanent magnets. When 
 
 ## 2. DC Motor
 
-<img src="https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/img/_posts/dc_motor_1.png" alt= "latex">
+<img src="https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/img/_posts/dc_motor_1.png" alt= "latex" width="300">
 
-<img src="https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/img/_posts/dc_motor_2.png" alt= "latex">
+<img src="https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/img/_posts/dc_motor_2.png" alt= "latex" width="250">
 
 What you usually do is use something called a **commutator** in which brushes, or something like this will apply the electric current in a selective manner. 
 
@@ -43,9 +43,9 @@ What you usually do is use something called a **commutator** in which brushes, o
 
 ### Direct Drive (Brushless DC motor)
 
-<img src="https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/img/_posts/brushless_dc.png" alt= "latex">
+<img src="https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/img/_posts/brushless_dc.png" alt= "latex" width="300">
 
-<img src="https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/img/_posts/direct_drive.png" alt= "latex">
+<img src="https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/img/_posts/direct_drive.png" alt= "latex" width="250">
 
 * Brushless: less friction and wear
 * Hollow shaft
@@ -94,7 +94,7 @@ Easier to control the exact speed or position! Don't need gearbox and encoder.
 * rotor (at the center): a gear with magnetic teeth is driving the spindle
 * stator (around): multiple coils able to attract or repel the gear. They are activated one after the other. 
 
-<img src="https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/img/_posts/stepping_motor.png" alt= "latex">
+<img src="https://raw.githubusercontent.com/yrsheld/yrsheld.github.io/master/static/img/_posts/stepping_motor.png" alt= "latex" width="300">
 
 Here is a so-called four phase stepper motor, which has **four coils which are activated one after the other, and each time move the gear by a very small but constant increment**. (ex: 1.6 degrees, 2 degrees)
 
