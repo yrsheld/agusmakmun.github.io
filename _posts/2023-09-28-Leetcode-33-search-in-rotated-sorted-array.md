@@ -2,7 +2,7 @@
 layout: post
 title:  "Leetcode 33. Search in Rotated Sorted Array"
 date:   2023-09-28 17:57:00 +0700
-categories: [C, Leetcode]
+categories: [Leetcode]
 ---
 
 

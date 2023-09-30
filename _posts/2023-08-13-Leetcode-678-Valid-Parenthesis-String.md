@@ -2,7 +2,7 @@
 layout: post
 title:  "Leetcode 678 Valid Parenthesis String"
 date:   2023-08-20 17:57:00 +0700
-categories: [C, Leetcode]
+categories: [Leetcode]
 ---
 
 [Link to problem](https://leetcode.com/problems/valid-parenthesis-string/description/)

@@ -2,7 +2,7 @@
 layout: post
 title:  "Leetcode 238. Product of Array Except Self"
 date:   2023-09-02 17:57:00 +0700
-categories: [C, Leetcode]
+categories: [Leetcode]
 ---
 
 [Link to problem](https://leetcode.com/problems/product-of-array-except-self/)
