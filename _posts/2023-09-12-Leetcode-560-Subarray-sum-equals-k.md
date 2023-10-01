@@ -78,7 +78,7 @@ Problem: The size of lookup table (SIZE) needs to be at least larger than the va
 
 ## Idea 3. Hashtable
 
-Size of hashtable needs to be at least larger than the array. Here, the array is of size $2*10^4$, we can set the size of the hashtable $10*10^4$.
+Size of hashtable needs to be at least larger than the array. Here, the array is of size $2\times10^4$ , we can set the size of the hashtable $10\times10^4$.
 
 ### Define the hashtable
 
@@ -110,7 +110,7 @@ Given a value, to store in the hashtable
 * Check if the counters[idx] is already occupied.
 * If yes, check whether the sum value stored in there is indeed our current sum. 
     * If counter[idx]->sum == sum: have found the correct entry! Increment 1 to the count value.
-    * else: **Collision** **(i.e., different key values being mapped to the same index)** A simple way to handle this is to go to the next idx. (i.e., keep going on until it finds its correct entry or it reaches an empty entry.)
+    * else: **Collision** **(i.e., different key values being mapped to the same index)**. A simple way to handle this is to go to the next idx. (i.e., keep going on until it finds its correct entry or it reaches an empty entry.)
 * If not, meaning an empty entry, we can create an entry here and set the sum to current sum with count equals to 1.
 
 > Note that there are many different design choices of the hashtable and the mechanism for handling the collision. What shown here is only a simple example.
