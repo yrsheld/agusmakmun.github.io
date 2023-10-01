@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Orientation estimation with accelerometer"
-date:   2023-08-20 17:57:00 +0700
+date:   2023-08-19 17:57:00 +0700
 categories: [sensor]
 ---
 
