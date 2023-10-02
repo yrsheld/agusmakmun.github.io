@@ -13,7 +13,7 @@ For instance, given a string "abcde", shift 3 characters to the left side, becom
 ## Insights
 Instead of copying substrings and reconcatenate the whole string, we try to do it in-place.
 
-Actually, it can be thought of as a series of reverse operations
+Actually, it can be thought of as a series of reverse operations.
 
 ```cpp
 // leftShift = 3
