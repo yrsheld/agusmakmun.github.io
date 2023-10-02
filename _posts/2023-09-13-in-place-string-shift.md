@@ -15,14 +15,21 @@ Instead of copying substrings and reconcatenate the whole string, we try to do i
 
 Actually, it can be thought of as a series of reverse operations
 
+```cpp
+// leftShift = 3
 abc | de
 
-ed | cba  (reverse the whole string)
+// reverse whole string
+ed | cba
 
-de | abc  (reverse each substring)
-
+// reverse each substring
+// length of the second substring ("abc") = leftShift
+// length of the first substring ("de) = length - leftShift
+de | abc
+```
 
 ## Implementation
+
 ```cpp
 void reverse(char* s, int start, int end){
     int i = start, j = end-1;
@@ -31,18 +38,21 @@ void reverse(char* s, int start, int end){
         char tmp = s[i];
         s[i] = s[j];
         s[j] = tmp;
+        i++; j--;
     }
 }
 
 void shiftString(char* s, int leftShift){
     int length = strlen(s);
-    leftShift %= length;
+    int front = length - (leftShift % length);
     
     reverse(s, 0, length);          //[0, length)
-    reverse(s, 0, leftShift);       //[0, leftShift)
-    reverse(s, leftShift, length);  //[leftShift, length)
+    reverse(s, 0, front);       //[0, leftShift)
+    reverse(s, front, length);  //[leftShift, length)
 }
 ```
+
 Note: right shift x characters == left shift (length-x) characters.
+
 ## Reference
 * Leetcode 1427. Perform String Shift
